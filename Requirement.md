@@ -5,6 +5,7 @@
 ## User Requirement
 
 * [ ] Reserve Doctor appointment
+* [ ] Write Report Issue
 * [ ] fillter Doctor list By
 
   * [ ] Specialty
@@ -40,6 +41,7 @@
 
   * Chart of Reservation per week
 
+* [ ] Write Report Issue
 
 ---
 
@@ -48,4 +50,5 @@
 ## Admin Requirement
 
 * [ ] List Doctors
+* [ ] List Issuses
 * [ ] View Users and Doctors in Charts
