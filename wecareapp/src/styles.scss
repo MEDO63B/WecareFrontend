@@ -18,7 +18,7 @@ $h4: 20px;
 $h5: 16px;
 $h6: 14px;
 $p: 12px;
-
+$button: 15px;
 
 @mixin flex-center ($direction) {
     display: flex;
@@ -26,3 +26,5 @@ $p: 12px;
     align-items: center;
     flex-direction: $direction;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

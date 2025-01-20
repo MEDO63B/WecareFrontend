@@ -3,13 +3,31 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+    logged: boolean = false;
+    isAdmin: boolean = false;
+    isDoctor: boolean = false;
+    isUser: boolean = true;
+  constructor() {
+   }
 
   ngOnInit() {
   }
+
+    handleSignin() {
+        console.log('sign in')
+    }
+    
+    handleSignup() {
+        console.log('sign up')
+        
+    }
+
+    handlelogout() {
+        console.log('logout')
+    }
 
 }

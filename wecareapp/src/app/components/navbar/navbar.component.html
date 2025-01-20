@@ -1,3 +1,43 @@
-<p>
-  navbar works!
-</p>
+<mat-toolbar >
+    <div class="navBar">
+        <div class="icon">
+            <span id="logo"><img src="../../../assets/icon/logo-dm.svg"></span>
+            <span>WeCare</span>
+        </div>
+        <div class="tabs">
+            <ng-container *ngIf="!isAdmin">
+                <span>Home</span>
+    
+                <!-- user/gust page-->
+                <ng-container *ngIf="isUser">
+                    <span>Doctor List</span>
+                </ng-container>
+    
+                <!-- Doctor page -->
+                 <ng-container *ngIf="isDoctor">
+                     <span>Clinic List</span>
+                 </ng-container>
+    
+                <span>Report</span>
+            </ng-container>
+
+            <!-- Admin pages -->
+             <ng-container *ngIf="isAdmin">
+                 <span>Dashboard</span>
+                 <span>Report List</span>
+             </ng-container>
+        </div>
+        <div class="action">
+            <!-- Non-logged -->
+            <ng-container *ngIf="!logged">
+                <span><button mat-button class="signin" (click)="handleSignin()">Sign in</button></span>
+                <span><button mat-button class="signup" (click)="handleSignup()">Sign up</button></span>
+            </ng-container>
+
+            <!-- logged -->
+            <ng-container *ngIf="logged">
+                <span><button mat-button class="signin" (click)="handlelogout()">Logout</button></span>
+            </ng-container>
+        </div>
+    </div>
+</mat-toolbar>

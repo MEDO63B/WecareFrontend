@@ -1,0 +1,80 @@
+@import '../../../styles.scss';
+
+mat-toolbar{
+    background-color: $primary;
+}
+
+.navBar{
+    @include flex-center('row');
+    width: 100%;
+
+}
+
+.icon
+{
+    display: flex;
+    padding-left: 2.5em;
+    flex-grow: 1;
+    align-items: center;
+    gap: 1.2em;
+}
+
+.tabs
+{
+    flex-grow: 2;
+    display: flex;
+    gap: 1.5em;
+}
+.tabs span{
+    transition: transform .2s ease-in;
+}
+.tabs span:hover
+{
+    color: $secondary;
+    transform: scale(1.1);
+}
+
+.action
+{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2.5em;
+    flex-grow: 1;
+}
+
+.signin
+{
+    background-color: $secondary;
+    font-size: $button;
+    transition: background-color ,transform .3s ease-in ;
+    margin: 0 1em;
+}
+
+span .signin{
+    color: $white;
+}
+
+.signin:hover{
+    transform: scale(.9);
+}
+
+
+
+.signup
+{
+    margin: 0 1em;
+    font-size: $button;
+    background-color: transparent;
+    border: 1px solid $secondary;
+    transition: background-color ,transform .3s ease-in ;
+}
+
+.signup:hover
+{
+    background-color: $secondary;
+    transform: scale(.9);
+}
+
+span .signup:hover{
+    color: $white;
+}
