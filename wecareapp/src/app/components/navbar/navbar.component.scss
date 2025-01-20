@@ -41,7 +41,20 @@ mat-toolbar{
     padding-right: 2.5em;
     flex-grow: 1;
 }
+.profile{
+    display: flex;
+    align-items: center;
+    width: 2.5em;
+}
+mat-icon{
+    transform: scale(1.8);
+    transition: all .2s ease-in;
+}
 
+mat-icon:hover{
+    color: $secondary;
+    transform: scale(1.6);
+}
 .signin
 {
     background-color: $secondary;
