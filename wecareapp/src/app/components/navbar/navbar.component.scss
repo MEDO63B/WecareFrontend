@@ -19,20 +19,6 @@ mat-toolbar{
     gap: 1.2em;
 }
 
-.tabs
-{
-    flex-grow: 2;
-    display: flex;
-    gap: 1.5em;
-}
-.tabs span{
-    transition: transform .2s ease-in;
-}
-.tabs span:hover
-{
-    color: $secondary;
-    transform: scale(1.1);
-}
 
 .action
 {

@@ -9,12 +9,16 @@ import { ReservationCardComponent } from './components/reservationCard/reservati
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './utils/material/material.module';
+import { FooterComponent } from './components/footer/footer.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
     ReservationCardComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    TabsComponent
    ],
   imports: [
     BrowserModule,

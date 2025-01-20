@@ -1,0 +1,23 @@
+@import '../../../styles.scss';
+
+.tabs-row
+{
+    display: flex;
+    flex-grow: 2;
+    gap: 1.5em;
+    flex-direction: row;
+}
+.tabs-column
+{
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+}
+.tabs span{
+    transition: transform .2s ease-in;
+}
+.tabs span:hover
+{
+    color: $secondary;
+    transform: scale(1.1);
+}

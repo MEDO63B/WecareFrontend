@@ -1,0 +1,65 @@
+@import '../../../styles.scss';
+
+
+mat-toolbar{
+    padding: 1.7em;
+    position: relative;
+    bottom: 0;
+    background-color: $primary;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+hr{
+    font-size: 20px;
+    width: 100%;
+    color: $light-gray;
+}
+.copyright{
+ color: $light-gray;
+ font-size: $h5;
+}
+footer{
+    width: 100%;
+    @include flex-center('row');
+    align-items: flex-start;
+}
+mat-toolbar .sitemap, mat-toolbar .social {
+    display: flex;
+    justify-content: center;
+}
+
+.icon{
+    display: flex;
+    margin-left: 1em;
+    padding-left: 1em;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    gap: 1em;
+}
+
+.sitemap{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.sitemap span{
+    margin-left: 1em;
+}
+
+
+.social{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: .6em;
+}
+.social div{
+    display: flex;
+    gap: 1em;
+    justify-content: flex-start;
+    font-weight: bold;
+}
