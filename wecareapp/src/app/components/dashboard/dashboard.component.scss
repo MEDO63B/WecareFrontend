@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.dashboard-container{
+    @include flex-center(row);
+    // width: 100vw;
+    gap: 25%;
+}
+
+l-col, r-col{
+    @include flex-center(column);
+    width: 50%;
+}
+.tool-kit{
+    font-size: $h3;
+    position: relative;
+    bottom: 1em;
+}

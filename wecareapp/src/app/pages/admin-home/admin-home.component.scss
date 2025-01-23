@@ -1,0 +1,21 @@
+@import '../../../styles.scss';
+
+.content-wrapper{
+    width: 100vw;
+    height: 100vh;
+    @include flex-center(column);
+    justify-content: flex-start;
+    gap: 10em;
+}
+
+h1{
+    position: relative;
+    top: 1em;
+    font-size: $h1;
+}
+
+hr{
+    font-size: 20px;
+    width: 100%;
+    color: $light-gray;
+}
