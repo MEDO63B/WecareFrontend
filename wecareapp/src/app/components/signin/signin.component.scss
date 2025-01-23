@@ -1,0 +1,44 @@
+@import '../../../styles.scss';
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: $white;
+}
+
+h1{
+    font-size: $h1;
+    text-align: center;
+}
+
+.signin{
+    background-color: $primary;
+}
+
+mat-form-field{
+    width: 100%;
+    padding: 0 1em;
+}
+
+.loading
+{
+    @include flex-center('row');
+    width: 100%;
+    padding: 35%;
+}
+
+.signin-loading{
+    background-color: gray;
+}
+
+.error{
+    color: $error;
+    font-size: $h5;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    font-weight: bold;
+}

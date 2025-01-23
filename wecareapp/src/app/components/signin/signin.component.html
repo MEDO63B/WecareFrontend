@@ -1,3 +1,39 @@
-<p>
-  signin works!
-</p>
+<form [formGroup]="signin" (ngSubmit)="handleSignin()" >
+    <h1>Sign in</h1>
+    <mat-form-field >
+      <mat-label>Email</mat-label>
+      <input type="email" matInput  formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="signin.get('email')?.hasError('email')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="signin.get('email')?.hasError('required') ">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="***********">
+      <mat-error *ngIf="signin.get('password')?.hasError('minlength')">
+        Please enter a valid password length min 6 characters
+      </mat-error>
+      <mat-error *ngIf="signin.get('password')?.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-button  [disabled]="!signin.valid" [disableRipple]="loading" [ngClass]="{'signin': !loading, 'signin-loading': loading}">
+        <ng-container *ngIf="!loading">
+            <span>Sign in</span>
+        </ng-container>
+        <ng-container *ngIf="loading">
+            <span class="loading"><mat-spinner></mat-spinner></span>
+        </ng-container>
+    </button>
+
+    
+    <ng-container *ngIf="isError">
+        <div class="error">{{error}}</div>
+    </ng-container>
+</form>
+  

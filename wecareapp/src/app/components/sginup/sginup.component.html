@@ -1,3 +1,102 @@
-<p>
-  sginup works!
-</p>
+<form [formGroup]="signup" (ngSubmit)="handlesignup()" >
+    <h1>Sign Up</h1>
+    <!-- Name Input -->
+    <mat-form-field >
+      <mat-label>Name</mat-label>
+      <input type="text" matInput  formControlName="name" placeholder="Ex. pat">
+      <mat-error *ngIf="signup.get('name')?.hasError('minlength')">
+        Please enter a valid Name min 2 characters
+      </mat-error>
+      <mat-error *ngIf="signup.get('name')?.hasError('required') ">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Email Input -->
+    <mat-form-field >
+      <mat-label>Email</mat-label>
+      <input type="email" matInput  formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="signup.get('email')?.hasError('email')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="signup.get('email')?.hasError('required') ">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Phone Input -->
+    <mat-form-field >
+      <mat-label>Phone</mat-label>
+      <input type="tel" matInput  formControlName="phone" placeholder="Ex. +91 1234567890">
+      <mat-error *ngIf="signup.get('phone')?.hasError('minlength')">
+        Please enter a valid Phone 
+      </mat-error>
+      <mat-error *ngIf="signup.get('phone')?.hasError('required') ">
+        Phone is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- BirthDate Input -->
+    <mat-form-field >
+      <mat-label>BirthDate</mat-label>
+      <input type="text" matInput  formControlName="birthdate" placeholder="Ex. 31/12/1987">
+      <mat-error *ngIf="signup.get('birthdate')?.hasError('required') ">
+        Birthdate is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <ng-container *ngIf="doctor">
+        <!-- Speciality Input -->
+        <mat-form-field >
+          <mat-label>Speciality</mat-label>
+          <input type="text" matInput  formControlName="speciality" placeholder="Ex. Dentist">
+          <mat-error *ngIf="signup.get('speciality')?.hasError('minlength')">
+            Please enter a valid speciality 
+          </mat-error>
+          <mat-error *ngIf="signup.get('speciality')?.hasError('required') ">
+            speciality is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    </ng-container>
+
+    <!-- Password Input -->
+    <mat-form-field >
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="***********">
+      <mat-error *ngIf="signup.get('password')?.hasError('minlength')">
+        Please enter a valid password length min 6 characters
+      </mat-error>
+      <mat-error *ngIf="signup.get('password')?.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Confirm Password Input -->
+    <mat-form-field >
+      <mat-label>Confirm Password</mat-label>
+      <input type="password" matInput formControlName="cpassword" placeholder="***********">
+      <mat-error *ngIf="signup.get('cpassword')?.hasError('minlength')">
+          Please enter a valid password length min 6 characters
+        </mat-error>
+
+        <mat-error *ngIf="signup.get('cpassword')?.hasError('required')">
+        Password is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signup.get('cpassword')?.hasError('match')">
+        Password <strong>Does not Match</strong>
+    </mat-error>
+</mat-form-field>
+
+<button mat-button [ngClass]="{'signup': !loading, 'signup-loading': loading}"  [disabled]="!signup.valid && !loading">
+    <ng-container *ngIf="!loading">
+        <span>Sign up</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+        <span class="loading"><mat-spinner></mat-spinner></span>
+    </ng-container>
+</button>
+
+<ng-container *ngIf="isError">
+    <div class="error">{{error}}</div>
+</ng-container>
+</form>

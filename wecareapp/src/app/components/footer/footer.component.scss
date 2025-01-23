@@ -63,3 +63,15 @@ mat-toolbar .sitemap, mat-toolbar .social {
     justify-content: flex-start;
     font-weight: bold;
 }
+.signup{
+    background-color: $secondary;
+}
+
+button{
+    font-weight: bold;
+    color: $ligth-white;
+}
+
+.modal-content{
+    background-image: url('../../../assets/icon/bg.jpg');
+}

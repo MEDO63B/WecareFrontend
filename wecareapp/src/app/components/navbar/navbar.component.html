@@ -8,8 +8,8 @@
         <div class="action">
             <!-- Non-logged -->
             <ng-container *ngIf="!logged">
-                <span><button mat-button class="signin" (click)="handleSignin()">Sign in</button></span>
-                <span><button mat-button class="signup" (click)="handleSignup()">Sign up</button></span>
+                <span><button mat-button class="signin"  data-bs-toggle="modal" data-bs-target="#Signin">Sign in</button></span>
+                <span><button mat-button class="signup"  data-bs-toggle="modal" data-bs-target="#Signup">Sign up</button></span>
             </ng-container>
 
             <!-- logged -->
@@ -20,3 +20,29 @@
         </div>
     </div>
 </mat-toolbar>
+
+<!-- Modal -->
+<div class="modal fade" id="Signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-body">
+        <app-sginup [doctor]="false" />
+    </div>
+    
+    </div>
+</div>
+</div>
+  
+
+<!-- Modal -->
+<div class="modal fade" id="Signin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-body">
+            <app-signin/>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
