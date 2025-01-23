@@ -4,7 +4,9 @@
             <span id="logo"><img src="../../../assets/icon/logo-dm.svg"></span>
             <span>WeCare</span>
         </div>
+        
         <app-tabs></app-tabs>
+
         <div class="action">
             <!-- Non-logged -->
             <ng-container *ngIf="!logged">
@@ -14,7 +16,8 @@
 
             <!-- logged -->
             <ng-container *ngIf="logged">
-                <span class="profile"><mat-icon>account_circle</mat-icon></span>
+                <span class="profile" data-bs-toggle="modal" data-bs-target="#DoctorProfile" *ngIf="isDoctor"><mat-icon>account_circle</mat-icon></span>
+                <span class="profile" data-bs-toggle="modal" data-bs-target="#Profile" *ngIf="!isDoctor"><mat-icon>account_circle</mat-icon></span>
                 <span><button mat-button class="signin" (click)="handlelogout()">Logout</button></span>
             </ng-container>
         </div>
@@ -26,7 +29,31 @@
 <div class="modal-dialog">
     <div class="modal-content">
     <div class="modal-body">
-        <app-sginup [doctor]="false" />
+        <app-sginup [doctor]="false" [editable]="true" [profile]="false"/>
+    </div>
+    
+    </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-body">
+        <app-sginup [doctor]="false" [editable]="false" [profile]="true" />
+    </div>
+    
+    </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="DoctorProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-body">
+        <app-sginup [doctor]="true" [editable]="false" [profile]="true"/>
     </div>
     
     </div>

@@ -1,5 +1,10 @@
 <form [formGroup]="signup" (ngSubmit)="handlesignup()" >
-    <h1>Sign Up</h1>
+    <ng-container *ngIf="!profile; else profileLogo;">
+        <h1>Sign Up</h1>
+    </ng-container>
+    <ng-template #profileLogo>
+        <div class="profileLogo"><mat-icon>account_circle</mat-icon></div>
+    </ng-template>
     <!-- Name Input -->
     <mat-form-field >
       <mat-label>Name</mat-label>
@@ -59,42 +64,63 @@
         </mat-form-field>
     </ng-container>
 
-    <!-- Password Input -->
-    <mat-form-field >
-      <mat-label>Password</mat-label>
-      <input type="password" matInput formControlName="password" placeholder="***********">
-      <mat-error *ngIf="signup.get('password')?.hasError('minlength')">
-        Please enter a valid password length min 6 characters
-      </mat-error>
-      <mat-error *ngIf="signup.get('password')?.hasError('required')">
-        Password is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-
-    <!-- Confirm Password Input -->
-    <mat-form-field >
-      <mat-label>Confirm Password</mat-label>
-      <input type="password" matInput formControlName="cpassword" placeholder="***********">
-      <mat-error *ngIf="signup.get('cpassword')?.hasError('minlength')">
-          Please enter a valid password length min 6 characters
-        </mat-error>
-
-        <mat-error *ngIf="signup.get('cpassword')?.hasError('required')">
-        Password is <strong>required</strong>
-    </mat-error>
-    <mat-error *ngIf="signup.get('cpassword')?.hasError('match')">
-        Password <strong>Does not Match</strong>
-    </mat-error>
-</mat-form-field>
-
-<button mat-button [ngClass]="{'signup': !loading, 'signup-loading': loading}"  [disabled]="!signup.valid && !loading">
-    <ng-container *ngIf="!loading">
-        <span>Sign up</span>
+    
+    <ng-container *ngIf="!profile">
+        <!-- Password Input -->
+        <mat-form-field >
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="***********">
+          <mat-error *ngIf="signup.get('password')?.hasError('minlength')">
+            Please enter a valid password length min 6 characters
+          </mat-error>
+          <mat-error *ngIf="signup.get('password')?.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
     </ng-container>
-    <ng-container *ngIf="loading">
-        <span class="loading"><mat-spinner></mat-spinner></span>
+
+    <ng-container *ngIf="!profile">
+
+        <!-- Confirm Password Input -->
+        <mat-form-field >
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" matInput formControlName="cpassword" placeholder="***********">
+            <mat-error *ngIf="signup.get('cpassword')?.hasError('minlength')">
+                Please enter a valid password length min 6 characters
+                </mat-error>
+        
+                <mat-error *ngIf="signup.get('cpassword')?.hasError('required')">
+                Password is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="signup.get('cpassword')?.hasError('match')">
+                Password <strong>Does not Match</strong>
+            </mat-error>
+        </mat-form-field>
     </ng-container>
-</button>
+    
+    <ng-container *ngIf="(profile && !editable); else editBlock;">
+        <button mat-button class="edit" (click)="handleEdit()">Edit</button>
+    </ng-container>
+    
+    <ng-template #editBlock>
+        <ng-container *ngIf="(profile && editable); else signupBlock;">
+            <div class="EditTools">
+                <button mat-button class="cancel" (click)="handleCancel()">Cancel</button>
+                <button mat-button class="save" (click)="handleSave()">Save</button>
+            </div>
+        </ng-container>
+    </ng-template>
+
+    <ng-template #signupBlock>
+        <button mat-button [ngClass]="{'signup': !loading, 'signup-loading': loading}"  [disabled]="!signup.valid && !loading">
+            <ng-container *ngIf="!loading">
+                <span>Sign up</span>
+            </ng-container>
+            <ng-container *ngIf="loading">
+                <span class="loading"><mat-spinner></mat-spinner></span>
+            </ng-container>
+        </button>
+    </ng-template>
 
 <ng-container *ngIf="isError">
     <div class="error">{{error}}</div>

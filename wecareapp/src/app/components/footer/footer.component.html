@@ -22,8 +22,9 @@
                 <img src="../../../assets/icon/threads.svg">
                 <span>Threads</span>
             </div>
-            <div>
-                <span>Doctor Signup</span>
+            <div class="doctorSignup">
+                <img src="../../../assets/icon/doctor.svg">
+                
                 <span><button mat-button class="signup"  data-bs-toggle="modal" data-bs-target="#dSignup">Sign up</button></span>
             </div>
         </div>
@@ -40,7 +41,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-body">
-            <app-sginup [doctor]="true"/>
+            <app-sginup [doctor]="true" [editable]="true" [profile]="false"/>
         </div>
         
         </div>
