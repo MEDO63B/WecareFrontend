@@ -1,0 +1,6 @@
+@import '../../../styles.scss';
+
+.report{
+    @include flex-center('column');
+    width: 100%;    
+}

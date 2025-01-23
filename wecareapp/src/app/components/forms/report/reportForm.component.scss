@@ -1,0 +1,51 @@
+@import '../../../../styles.scss';
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: $white;
+    background-image: url('../../../../assets/icon/bg.jpg');
+    border-radius: 15px;
+    padding: 2em;
+}
+
+h1{
+    font-size: $h1;
+    text-align: center;
+}
+
+.submit{
+    margin-top: 1em;
+    background-color: $primary;
+}
+
+mat-form-field{
+    width: 25em;
+    padding: 0 1em;
+}
+
+.submit-loading{
+    margin-top: 1em;
+    background-color: gray;
+}
+
+.loading
+{
+    @include flex-center('row');
+    width: 100%;
+    padding: 35%;
+}
+
+
+.error{
+    color: $error;
+    font-size: $h5;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    font-weight: bold;
+}

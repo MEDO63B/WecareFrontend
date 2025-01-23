@@ -15,10 +15,10 @@ export class SginupComponent implements OnInit {
         this.editable = false;
         switch (this.doctor) {
             case true:
-                this.signup.setValue({'name':this.tempData?.name, 'email':this.tempData?.email, 'phone':this.tempData?.phone, 'birthdate':this.tempData?.birthdate, 'speciality':this.tempData?.speciality});
+                this.signup.setValue({'name':this.tempData?.name ?? '', 'email':this.tempData?.email ?? '', 'phone':this.tempData?.phone ?? '', 'birthdate':this.tempData?.birthdate ?? '', 'speciality':this.tempData?.speciality ?? ''});
                 break;
             case false:
-                this.signup.setValue({'name':this.tempData?.name, 'email':this.tempData?.email, 'phone':this.tempData?.phone, 'birthdate':this.tempData?.birthdate});
+                this.signup.setValue({'name':this.tempData?.name ?? '', 'email':this.tempData?.email ?? '', 'phone':this.tempData?.phone ?? '', 'birthdate':this.tempData?.birthdate ?? ''});
                 break;
         }
     }

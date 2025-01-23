@@ -1,0 +1,37 @@
+<form [formGroup]="report" (ngSubmit)="handleReport()">
+    <h1>Report</h1>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input formControlName="email" type="email" matInput placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="report.get('email')?.hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="report.get('email')?.hasError('required') ">
+            Email is <strong>required</strong>
+          </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput placeholder="Ex. I have a Problem With Sign up as Doctor"></textarea>
+        <mat-error *ngIf="report.get('description')?.hasError('required') ">
+            Description is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="report.get('description')?.hasError('minlength')">
+            Please enter a valid description min 2 characters
+          </mat-error>
+    </mat-form-field>
+
+    <button mat-button  [disabled]="!report.valid" [disableRipple]="loading" [ngClass]="{'submit': !loading, 'submit-loading': loading}">
+        <ng-container *ngIf="!loading">
+            <span>Submit</span>
+        </ng-container>
+        <ng-container *ngIf="loading">
+            <span class="loading"><mat-spinner></mat-spinner></span>
+        </ng-container>
+    </button>
+
+    <ng-container *ngIf="isError">
+        <div class="error">{{error}}</div>
+    </ng-container>
+    
+</form>

@@ -13,8 +13,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SginupComponent } from './components/sginup/sginup.component';
+import { ReportFormComponent } from './components/forms/report/reportForm.component';
+import { ReportComponent } from './pages/report/report.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DoctorListComponent } from './pages/doctor-list/doctor-list.component';
+import { ClinicListComponent } from './pages/clinic-list/clinic-list.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
+import { ReportListComponent } from './pages/report-list/report-list.component';
+import { ClinicReservationComponent } from './pages/clinic-reservation/clinic-reservation.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [	
@@ -24,7 +35,16 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     TabsComponent,
     SigninComponent,
-    SginupComponent
+    SginupComponent,
+    ReportFormComponent,
+    ReportComponent,
+    HomeComponent,
+    DoctorListComponent,
+    ClinicListComponent,
+    ReservationComponent,
+    AdminHomeComponent,
+    ReportListComponent,
+    ClinicReservationComponent
    ],
   imports: [
     BrowserModule,
@@ -35,7 +55,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     RouterModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

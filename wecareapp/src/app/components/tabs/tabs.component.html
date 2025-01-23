@@ -1,23 +1,23 @@
 <div [ngClass]="{'tabs-row': !direction, 'tabs-column': direction}">
     <ng-container *ngIf="!isAdmin">
-        <span>Home</span>
+        <span routerLink="/">Home</span>
 
         <!-- user/gust page-->
         <ng-container *ngIf="isUser">
-            <span>Doctor List</span>
+            <span routerLink="/doctorList">Doctor List</span>
         </ng-container>
 
         <!-- Doctor page -->
          <ng-container *ngIf="isDoctor">
-             <span>Clinic List</span>
+             <span routerLink="/clinicList">Clinic List</span>
          </ng-container>
 
-        <span>Report</span>
+        <span routerLink="/report">Report</span>
     </ng-container>
 
     <!-- Admin pages -->
      <ng-container *ngIf="isAdmin">
-         <span>Dashboard</span>
-         <span>Report List</span>
+         <span routerLink="/dashboard">Dashboard</span>
+         <span routerLink="/reportList">Report List</span>
      </ng-container>
 </div>
