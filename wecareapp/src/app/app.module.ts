@@ -26,6 +26,7 @@ import { ClinicReservationComponent } from './pages/clinic-reservation/clinic-re
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { UserService } from './services/user/user.service';
+import { ClinicFormComponent } from './components/forms/clinicForm/clinicForm.component';
 
 @NgModule({
   declarations: [	
@@ -44,7 +45,8 @@ import { UserService } from './services/user/user.service';
     ReservationComponent,
     AdminHomeComponent,
     ReportListComponent,
-    ClinicReservationComponent
+    ClinicReservationComponent,
+    ClinicFormComponent
    ],
   imports: [
     BrowserModule,

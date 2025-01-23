@@ -1,0 +1,22 @@
+@import '../../../styles.scss';
+
+.list{
+    background-color: blueviolet;
+    width: 100vw;
+    height: 100vh;
+    @include flex-center(column);
+    gap: 1em;
+}
+
+.row{
+    margin: 2em;
+}
+
+.add{
+    background-color: $green;
+    color: $black;
+}
+
+.modal-content{
+    background-image: url('../../../assets/icon/bg.jpg');
+}

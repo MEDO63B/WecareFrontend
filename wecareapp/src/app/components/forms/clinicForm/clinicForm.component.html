@@ -1,0 +1,51 @@
+<form [formGroup]="clinic" (ngSubmit)="handleClinic()">
+    <div class="logo"> 
+        <span><img src="../../../../assets/icon/clinic.svg" width="180" height="120"></span>
+        <h1>Clinic Form</h1>
+    </div>
+    <div class="inputGroup">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Ex. Clinic Name">
+            <mat-error *ngIf="clinic.get('name')?.hasError('required')">
+                Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input type="tel" matInput formControlName="phone" placeholder="Ex. +91 1234567890">
+            <mat-error *ngIf="clinic.get('phone')?.hasError('required')">
+                Phone is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Area</mat-label>
+            <input matInput formControlName="area" placeholder="Ex. Clinic Area">
+            <mat-error *ngIf="clinic.get('area')?.hasError('required')">
+                Address is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <button *ngIf="!editable" mat-button  [disabled]="!clinic.valid" [disableRipple]="loading" [ngClass]="{'submit': !loading, 'submit-loading': loading}">
+        <ng-container *ngIf="!loading">
+            <span>Submit</span>
+        </ng-container>
+        
+        <ng-container *ngIf="loading">
+            <span class="loading"><mat-spinner></mat-spinner></span>
+        </ng-container>
+    </button>
+
+    <ng-container *ngIf="!loading && editable">
+        <div class="EditTools">
+            <button mat-button class="cancel" (click)="handleCancel()">Cancel</button>
+            <button mat-button class="save" (click)="handleSave()">Save</button>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="isError">
+        <div class="error" >
+            {{error}}
+        </div>
+    </ng-container>
+</form>
