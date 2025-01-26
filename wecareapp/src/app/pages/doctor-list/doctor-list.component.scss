@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+.List{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    gap: 1em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
