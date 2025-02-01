@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IReservationCard } from 'src/app/interfaces/doctor/reservation.user';
 
 @Component({
   selector: 'app-reservationCard',
@@ -7,21 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationCardComponent implements OnInit 
 {
-reservation: any;
+    @Input({required: true}) inList: boolean = false;
 
+    reservation: IReservationCard;
+    
   constructor() { 
     this.reservation = {
-      id: 1,
-      date: '01/01/2019',
-      time: '10:00',
+        id: '1',
+      area: 'cairo',
+      phone: '1015166600',
       doctor: {
-        name: 'Dr. John Doe',
-        speciality: 'Cardiologist'
-      }
+          name: 'Dr. John Doe',
+          speciality: 'Cardiologist'
+        }
     }
-  }
+}
 
   ngOnInit() {
   }
 
+  handleView(id: string) {
+      console.log(id);
+  }
 }

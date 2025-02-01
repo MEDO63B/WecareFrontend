@@ -5,14 +5,70 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: $ligth-white;
+}
+
+.nameSection mat-card-subtitle{
+    color: $white;
 }
 
 mat-card-header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 4em;
+    padding-bottom: 0;
+    color: $white;
 }
 
 mat-card{
     margin: 4em;
+    background-color: $secondary;
+    color: $white;
+}
+
+mat-card-content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em;
+    flex-direction: column;
+    align-items: center;
+    color: $white;
+}
+
+mat-list{
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    color: $white;
+}
+
+mat-list-item{
+    color: $white;
+    padding: 3.5em 3em;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+img{
+    width: 9em;
+    height: 9em;
+}
+
+mat-list-item *{
+    color: $ligth-white;
+}
+
+mat-card-actions{
+    @include flex-center(row);
+    margin-bottom: 1em;
+}
+
+.viewbtn{
+    background-color: $primary;
 }

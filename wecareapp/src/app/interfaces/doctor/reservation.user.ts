@@ -1,5 +1,6 @@
 export interface IReservationCard{
-    id: number,
-    date: string,
-    time: string
+    id: string,
+    area: string,
+    phone: string,
+    doctor: {name: string, speciality: string}
 }
