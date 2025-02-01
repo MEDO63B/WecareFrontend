@@ -1,0 +1,15 @@
+@import '../../../styles.scss';
+
+mat-header-cell.mat-mdc-header-cell, mat-cell
+{
+    width: 21em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+mat-row:hover{
+    cursor: pointer;
+    background-color: lightblue;
+}

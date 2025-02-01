@@ -30,6 +30,7 @@ import { UserService } from './services/user/user.service';
 import { ClinicFormComponent } from './components/forms/clinicForm/clinicForm.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchService } from './services/search/search-service.service';
+import { DataTableComponent } from './components/dataTable/dataTable.component';
 
 @NgModule({
   declarations: [	
@@ -51,7 +52,8 @@ import { SearchService } from './services/search/search-service.service';
     ClinicReservationComponent,
     ClinicFormComponent,
     DashboardComponent,
-    SearchComponent
+    SearchComponent,
+    DataTableComponent
    ],
   imports: [
     BrowserModule,
