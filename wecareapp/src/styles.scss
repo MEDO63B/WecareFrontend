@@ -27,5 +27,5 @@ $button: 15px;
     align-items: center;
     flex-direction: $direction;
 }
-html, body, main { height: 100%; scroll-behavior: smooth; scroll-snap-type: mandatory;}
+html, body, main { height: 100%; scroll-behavior: smooth; scroll-snap-type: mandatory; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: $ligth-white;}

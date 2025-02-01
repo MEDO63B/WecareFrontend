@@ -1,0 +1,28 @@
+@import '../../../styles.scss';
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:5%;
+    margin-top: 2em;
+}
+
+
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled)
+{
+    background-color: $light-gray ;
+    border-radius: 15px !important;
+    color: white !important;
+}
+mat-label, input
+{
+    color: white !important;
+}
+
+input::placeholder
+{
+    color: $ligth-white !important;
+}
+
+

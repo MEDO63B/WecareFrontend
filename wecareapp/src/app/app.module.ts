@@ -22,12 +22,14 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 import { ReportListComponent } from './pages/report-list/report-list.component';
 import { ClinicReservationComponent } from './pages/clinic-reservation/clinic-reservation.component';
+import { SearchComponent } from './components/search/search.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { UserService } from './services/user/user.service';
 import { ClinicFormComponent } from './components/forms/clinicForm/clinicForm.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SearchService } from './services/search/search-service.service';
 
 @NgModule({
   declarations: [	
@@ -48,7 +50,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ReportListComponent,
     ClinicReservationComponent,
     ClinicFormComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchComponent
    ],
   imports: [
     BrowserModule,
@@ -57,9 +60,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
