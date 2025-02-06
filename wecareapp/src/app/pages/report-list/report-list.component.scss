@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+.list{
+    @include flex-center(column);
+    gap: 1em;
+}
+
+.title
+{
+    font-size: $h1;
+}

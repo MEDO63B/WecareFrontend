@@ -9,6 +9,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatSortModule } from '@angular/material/sort';
 
 const MATERIAL = [
     MatButtonModule,
@@ -19,7 +20,8 @@ const MATERIAL = [
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSortModule
 ];
 
 @NgModule({

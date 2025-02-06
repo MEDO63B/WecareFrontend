@@ -1,10 +1,12 @@
 <div class="content-wrapper">
-    <h1>Welcome Admin</h1>
+    <h1 style="margin-bottom: 2.5em;">Welcome Admin</h1>
     <div class="charts">
         <app-dashboard/>
     </div>
     <hr/>
     <div class="userlist">
-        <p>userlist</p>
+        <h1 class="title">User List</h1>
+        <app-search/>
+        <app-dataTable [data]="data" [labels]="labels" [action]="action"/>
     </div>
 </div>

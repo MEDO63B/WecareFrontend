@@ -9,7 +9,22 @@ mat-header-cell.mat-mdc-header-cell, mat-cell
     text-align: center;
 }
 
+mat-header-cell.mat-mdc-header-cell{
+    background-color: $secondary;
+    color: $ligth-white;
+    font-size: $h5;
+}
+
+::ng-deep .mat-sort-header-arrow{
+    color: $ligth-white !important;
+}
 mat-row:hover{
     cursor: pointer;
     background-color: lightblue;
+}
+
+.dataTable{
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: scroll;
 }

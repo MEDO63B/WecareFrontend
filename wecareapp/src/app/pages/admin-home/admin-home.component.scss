@@ -3,9 +3,10 @@
 .content-wrapper{
     width: 100vw;
     height: 100vh;
+    overflow: scroll;
     @include flex-center(column);
     justify-content: flex-start;
-    gap: 10em;
+    gap: 2em;
 }
 
 h1{
@@ -18,4 +19,15 @@ hr{
     font-size: 20px;
     width: 100%;
     color: $light-gray;
+}
+
+.userlist{
+    @include flex-center(column);
+    gap: 1em;
+    margin-bottom: 12em;
+}
+
+.title{
+    font-size: $h1;
+    field-sizing: content;
 }

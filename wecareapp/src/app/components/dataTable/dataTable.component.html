@@ -1,18 +1,27 @@
-<mat-table [dataSource]="data">
-
-    <!-- Dynamic column definitions -->
-    <ng-container *ngFor="let label of labels" [matColumnDef]="label">
-        <mat-header-cell *matHeaderCellDef> {{ label }} </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-            <ng-container [ngSwitch]="row[label]">
-                <button *ngSwitchCase="'Edit'" mat-raised-button style="background-color: yellow;">{{ row[label] }}</button>
-                <button *ngSwitchCase="'Checkin'" mat-raised-button style="background-color: green; color: white;">{{ row[label] }}</button>
-                <button *ngSwitchCase="'Delete'" mat-raised-button [color]="'warn'">{{ row[label] }}</button>
-                <ng-container *ngSwitchDefault>{{ row[label] }}</ng-container>
-            </ng-container>
-        </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="labels"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: labels;"></mat-row>
-</mat-table>
+<div class="dataTable">
+    <mat-table [dataSource]="datasource" matSort>
+    
+        <!-- Dynamic column definitions -->
+        <ng-container *ngFor="let label of labels" [matColumnDef]="label">
+            <mat-header-cell *matHeaderCellDef mat-sort-header="{{label}}"> {{ label }} </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <ng-container [ngSwitch]="label">
+                    <button *ngSwitchCase="'action'" mat-raised-button [ngStyle]="{
+                        'background-color': 
+                            action.actionType == 'Edit' ? 'yellow' 
+                        :   action.actionType == 'Delete' ? 'red' 
+                        :   action.actionType == 'Checkin' ? 'green' : ''
+                        ,
+                        'color': 
+                            action.actionType == 'Edit' ? 'black' : 'white'
+                            }" (click)="action.actionCallBack(row['id'])">{{ action.actionType }}</button>
+                            
+                    <ng-container *ngSwitchDefault>{{ row[label] }}</ng-container>
+                </ng-container>
+            </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="labels; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: labels;"></mat-row>
+    </mat-table>
+</div>

@@ -1,3 +1,5 @@
-<div>
-    <app-dataTable [data]="data" [labels]="labels" />
+<div class="list">
+    <h1 class="title">Report List</h1>
+    <app-search/>
+    <app-dataTable [data]="data" [labels]="labels"   [action]="action"/>
 </div>
