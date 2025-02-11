@@ -11,15 +11,19 @@ export class DataTableComponent implements OnInit, OnChanges {
 
     @ViewChild(MatSort) sort!: MatSort;
     @Input() labels: string[] = [];
-    @Input() data: any[] = [];
-    @Input() action: IDataTableAction = { actionType: '', actionCallBack: (id: string) => { console.log(`Action: ${id}`); } };
+    @Input() data: any[] | undefined ;
+    @Input() action: IDataTableAction | undefined = { actionType: '', actionCallBack: (id: string) => { console.log(`Action: ${id}`); } };
     datasource: any;
+    isLoading: boolean = true;
     
     constructor() {
+        this.isLoading = true;
     }
     ngOnChanges(changes: SimpleChanges): void {
+        this.isLoading = true;
         this.datasource = new MatTableDataSource(changes['data'].currentValue);
         this.datasource.sort = this.sort;
+        this.isLoading = false;
     }
 
     ngOnInit() {
@@ -27,6 +31,7 @@ export class DataTableComponent implements OnInit, OnChanges {
     ngAfterViewInit() {
         this.datasource = new MatTableDataSource(this.data);
         this.datasource.sort = this.sort;
+        this.isLoading = false;
     }
 
 }

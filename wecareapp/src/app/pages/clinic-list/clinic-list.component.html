@@ -1,17 +1,34 @@
 <div class="list">
-    <div class="row"> Clinic Table</div>
+    <div class="row"> 
+        <h1 class="title">Clinic List</h1>
+        <app-search/>
+        <app-dataTable [data]="data" [labels]="labels" [action]="action"/>
+    </div>
     <div class="row">
-        <button mat-button class="add"  data-bs-toggle="modal" data-bs-target="#Clinic">Add</button>
+        <button mat-button class="add"  data-bs-toggle="modal" data-bs-target="#ClinicAdd">Add</button>
+        <button mat-button id="editbtn"  data-bs-toggle="modal" data-bs-target="#ClinicEdit" hidden>Edit</button>
     </div>
 </div>
 
 
 <!-- Modal -->
-<div class="modal fade" id="Clinic" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ClinicAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-body">
-            <app-clinicForm [editable]="true"/>
+            <app-clinicForm [editable]="false" [newElement]="true"/>
+        </div>
+        
+        </div>
+    </div>
+    </div>
+    
+<!-- Modal -->
+<div class="modal fade" id="ClinicEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-body">
+            <app-clinicForm [editable]="true" [newElement]="false" />
         </div>
         
         </div>

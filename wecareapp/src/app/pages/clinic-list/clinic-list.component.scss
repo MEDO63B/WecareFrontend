@@ -1,15 +1,15 @@
 @import '../../../styles.scss';
 
 .list{
-    background-color: blueviolet;
     width: 100vw;
     height: 100vh;
     @include flex-center(column);
+    justify-content: flex-start;
     gap: 1em;
 }
 
 .row{
-    margin: 2em;
+    margin: 2em 4em;
 }
 
 .add{
@@ -19,4 +19,9 @@
 
 .modal-content{
     background-image: url('../../../assets/icon/bg.jpg');
+}
+
+.title{
+    color: $ligth-white;
+    font-size: $h1;
 }
