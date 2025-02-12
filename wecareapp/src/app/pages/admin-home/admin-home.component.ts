@@ -43,7 +43,7 @@ export class AdminHomeComponent implements OnInit, OnDestroy {
     searchSub: Subscription;
     constructor(private searchService: SearchService) {
         
-        this.action = { actionType: 'Delete', actionCallBack: this.deleteHandler };
+        this.action = { actionType: 'Delete', actionCallBack: [this.deleteHandler] };
 
         this.searchSub = this.searchService.searchTerm.subscribe(val => {
           this.data = this.tempData.filter(item =>

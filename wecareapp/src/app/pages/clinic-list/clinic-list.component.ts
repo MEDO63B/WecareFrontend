@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IClinicEdit } from 'src/app/interfaces/clinic/edit.clinic';
 import { IClinicList } from 'src/app/interfaces/clinic/list.clinic';
 import { IDataTableAction } from 'src/app/interfaces/table/data.table';
@@ -16,15 +17,19 @@ export class ClinicListComponent implements OnInit {
 
     labels: string[] = ['name', 'area', 'no. of reservation', 'action'];
     action: IDataTableAction = {
-        actionType: 'Edit',
-        actionCallBack: (id: string) => {
+        actionType: 'Edit/View',
+        actionCallBack: [(id: string) => {
             console.log(`Action: ${id}`);
             let clinic = this.data?.find((item) => item.id == id) as IClinicEdit;
             this.clinicServie.setCurrentClinic(clinic);
             new ElementRef<HTMLElement>(document.querySelector('#editbtn') as HTMLElement).nativeElement.click();
-        }
+        },
+        (id: string) => {
+            console.log(`View: ${id}`);
+            this.router.navigate([`/clinic/${id}`]);
+        }]
     };
-    constructor(private clinicServie: ClinicFormService, private serachService: SearchService) {
+    constructor(private clinicServie: ClinicFormService, private serachService: SearchService, private router: Router) {
       this.serachService.searchTerm.subscribe(val => {
           this.data = this.clinicServie.mockData.filter(item => item.name.toLowerCase().includes(val.toLowerCase()) || item.area?.toLowerCase().includes(val.toLowerCase()));
       })

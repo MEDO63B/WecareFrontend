@@ -12,7 +12,7 @@ export class DataTableComponent implements OnInit, OnChanges {
     @ViewChild(MatSort) sort!: MatSort;
     @Input() labels: string[] = [];
     @Input() data: any[] | undefined ;
-    @Input() action: IDataTableAction | undefined = { actionType: '', actionCallBack: (id: string) => { console.log(`Action: ${id}`); } };
+    @Input() action: IDataTableAction | undefined = { actionType: '', actionCallBack: [(id: string) => { console.log(`Action: ${id}`); }] };
     datasource: any;
     isLoading: boolean = true;
     

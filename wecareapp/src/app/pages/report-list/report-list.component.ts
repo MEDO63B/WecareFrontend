@@ -38,7 +38,7 @@ export class ReportListComponent implements OnInit, OnDestroy {
     
     action: IDataTableAction = {
         actionType: 'Delete',
-        actionCallBack: this.deleteHandler
+        actionCallBack: [this.deleteHandler]
     }
 
     deleteHandler(id: string) { console.log(`Delete: ${id}`); }

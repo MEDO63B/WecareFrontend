@@ -7,6 +7,7 @@ import { ClinicListComponent } from './pages/clinic-list/clinic-list.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 import { ReportListComponent } from './pages/report-list/report-list.component';
+import { ClinicReservationComponent } from './pages/clinic-reservation/clinic-reservation.component';
 
 const routes: Routes = [
     {
@@ -36,6 +37,10 @@ const routes: Routes = [
     {
         path: 'reportList',
         component: ReportListComponent
+    },
+    {
+        path: 'clinic/:id',
+        component: ClinicReservationComponent
     }
 ];
 
