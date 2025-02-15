@@ -1,3 +1,6 @@
-<p>
-  reservation works!
-</p>
+<div class="reservationComponent">
+  <app-reservationCard [inList]="false" [doctorData]="doctor"/>
+  <div class="schudle">
+    <app-dataTable [labels]="labels" [data]="data" [action]="action"/>
+  </div>
+</div>

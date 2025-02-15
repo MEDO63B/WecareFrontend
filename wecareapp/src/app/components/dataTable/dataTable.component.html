@@ -13,7 +13,7 @@
                     <ng-container [ngSwitch]="label">
                         <ng-container *ngIf="action && action?.actionCallBack?.length != 0 ">
                                 <ng-container *ngSwitchCase="'action'">
-                                <ng-container *ngIf="!action.actionType.includes('/'); else viewBlock">
+                                <ng-container *ngIf="!action.actionType.includes('/') && !action.actionType.includes('&'); else viewBlock">
 
                                     <button  mat-raised-button [ngStyle]="{
                                         'background-color':
@@ -25,7 +25,8 @@
                                             action.actionType == 'Edit' ? 'black' : 'white'
                                             }" (click)="action.actionCallBack[0](row['id'])">{{ action.actionType }}</button>
                                 </ng-container>
-                                <ng-template #viewBlock>
+                                <ng-template  #viewBlock>
+                                  <ng-container *ngIf="action.actionType.includes('/') && !action.actionType.includes('&'); else reserveBlock">
                                     <button mat-raised-button [ngStyle]="{
                                         'background-color':
                                             action.actionType.split('/')[0] == 'View' ? 'green'
@@ -46,6 +47,23 @@
                                         'color':
                                             action.actionType.split('/')[1] == 'View' ? 'white' : 'black'
                                             }" (click)="action.actionCallBack[1](row['id'])">{{ action.actionType.split('/')[1] }}</button>
+                                  </ng-container>
+                                  <ng-template #reserveBlock>
+                                    <button mat-raised-button [ngStyle]="{
+                                        'background-color':
+                                            row['status'] == 'Reserve' ? 'green'
+                                        :   row['status'] == 'Cancel' ? 'red'
+                                        :   ''
+                                        ,
+                                        'color':
+                                            row['status'] != 'Reserves' ? 'white' : 'black'
+                                            }" (click)="
+                                            row['status'] == 'Reserve'
+                                            ? action.actionCallBack[0](row['id'])
+                                            : action.actionCallBack[1](row['id'])"
+                                            [disabled]="row['status'] == 'Reserved'"
+                                            >{{ row['status'] }}</button>
+                                    </ng-template>
                                 </ng-template>
                                 </ng-container>
                             </ng-container>

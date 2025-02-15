@@ -1,4 +1,5 @@
 import { AfterContentInit, Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IReservationCard } from 'src/app/interfaces/doctor/reservation.user';
 
 @Component({
@@ -12,7 +13,7 @@ export class ReservationCardComponent implements OnInit, AfterContentInit
     @Input() doctorData: IReservationCard | undefined;
     reservation: IReservationCard;
 
-  constructor() {
+  constructor(private router:Router) {
     if (this.doctorData) {
       this.reservation = this.doctorData;
     } else {
@@ -48,5 +49,7 @@ export class ReservationCardComponent implements OnInit, AfterContentInit
 
   handleView(id: string) {
       console.log(id);
+      this.router.navigate([`/reservation/`, id]);
+
   }
 }

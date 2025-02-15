@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+.reservationComponent
+{
+  @include flex-center(row);
+}
+
+.schudle
+{
+  max-width: 50em;
+}

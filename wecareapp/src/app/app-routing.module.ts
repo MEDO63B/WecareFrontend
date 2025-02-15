@@ -27,7 +27,7 @@ const routes: Routes = [
         component: ClinicListComponent
     },
     {
-        path: 'reservation',
+        path: 'reservation/:id',
         component: ReservationComponent
     },
     {
