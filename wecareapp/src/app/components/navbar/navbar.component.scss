@@ -19,6 +19,13 @@ mat-toolbar{
     gap: 1.2em;
 }
 
+.modal-overlay{
+  max-height: 100vh !important;
+  overflow: scroll;
+}
+.modal-overlay .modal-content{
+  background-image: none;
+}
 .modal-content{
     background-image: url('../../../assets/icon/bg.jpg');
 }
@@ -59,6 +66,21 @@ span .signin{
 .signin:hover{
     transform: scale(.9);
 }
+.logout
+{
+    background-color: $error;
+    font-size: $button;
+    transition: background-color ,transform .3s ease-in ;
+    margin: 0 1em;
+}
+
+span .logout{
+    color: $ligth-white;
+}
+
+.logout:hover{
+    transform: scale(.9);
+}
 
 
 
@@ -79,4 +101,37 @@ span .signin{
 
 span .signup:hover{
     color: $white;
+}
+
+.sideMenu
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideMenu button{
+  width: 100%;
+  text-align: center;
+  margin: 0.2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sideMenu span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideMenu button mat-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.8) translateX(0.2em);
+  &:hover{
+    transform: scale(1.6)  translateX(0.2em);
+  }
 }

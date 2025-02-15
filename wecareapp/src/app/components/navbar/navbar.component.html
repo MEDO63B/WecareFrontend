@@ -1,10 +1,10 @@
 <mat-toolbar >
     <div class="navBar">
         <div class="icon">
-            <span id="logo"><img src="../../../assets/icon/logo-dm.svg"></span>
+            <span id="logo"><img src="../../../assets/icon/logo-dm.svg" alt="Logo"></span>
             <span>WeCare</span>
         </div>
-        
+
         <app-tabs></app-tabs>
 
         <div class="action">
@@ -14,11 +14,26 @@
                 <span><button mat-button class="signup"  data-bs-toggle="modal" data-bs-target="#Signup">Sign up</button></span>
             </ng-container>
 
-            <!-- logged -->
             <ng-container *ngIf="logged">
-                <span class="profile" data-bs-toggle="modal" data-bs-target="#DoctorProfile" *ngIf="isDoctor"><mat-icon>account_circle</mat-icon></span>
-                <span class="profile" data-bs-toggle="modal" data-bs-target="#Profile" *ngIf="!isDoctor"><mat-icon>account_circle</mat-icon></span>
-                <span><button mat-button class="signin" (click)="handlelogout()">Logout</button></span>
+              <button [matMenuTriggerFor]="sideMenu" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+              </button>
+                <mat-menu #sideMenu="matMenu" xPosition="before">
+                  <div class="sideMenu">
+                    <!-- logged -->
+                     <button mat-menu-item *ngIf="isDoctor">
+                       <span class="profile" data-bs-toggle="modal" data-bs-target="#DoctorProfile" ><mat-icon>account_circle</mat-icon></span>
+                     </button>
+                     <button mat-menu-item *ngIf="!isDoctor">
+                       <mat-icon class="profile" data-bs-toggle="modal" data-bs-target="#Profile">account_circle</mat-icon>
+                      </button>
+                     <button mat-menu-item data-bs-toggle="modal" data-bs-target="#Reservations" *ngIf="!isDoctor">
+                          Reservations
+                      </button>
+                      <!-- <span ><button mat-menu-item mat-button class="signin" (click)="handlelogout()">Logout</button></span> -->
+                      <span mat-menu-item><button mat-button class="logout"  (click)="handlelogout()">Logout</button></span>
+                  </div>
+                </mat-menu>
             </ng-container>
         </div>
     </div>
@@ -31,35 +46,39 @@
     <div class="modal-body">
         <app-sginup [doctor]="false" [editable]="true" [profile]="false"/>
     </div>
-    
+
     </div>
 </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="Profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-body">
-        <app-sginup [doctor]="false" [editable]="false" [profile]="true" />
-    </div>
-    
-    </div>
-</div>
-</div>
+<ng-container *ngIf="!isDoctor">
+  <!-- Modal -->
+  <div class="modal fade" id="Profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-body">
+          <app-sginup [doctor]="false" [editable]="false" [profile]="true" />
+      </div>
 
-<!-- Modal -->
-<div class="modal fade" id="DoctorProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-body">
-        <app-sginup [doctor]="true" [editable]="false" [profile]="true"/>
-    </div>
-    
-    </div>
-</div>
-</div>
-  
+      </div>
+  </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isDoctor">
+  <!-- Modal -->
+  <div class="modal fade" id="DoctorProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-body">
+          <app-sginup [doctor]="true" [editable]="false" [profile]="true"/>
+      </div>
+
+      </div>
+  </div>
+  </div>
+</ng-container>
+
 
 <!-- Modal -->
 <div class="modal fade" id="Signin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,8 +87,24 @@
         <div class="modal-body">
             <app-signin/>
         </div>
-        
+
       </div>
     </div>
   </div>
-  
+
+<ng-container *ngIf="!isDoctor">
+  <!-- Modal -->
+  <div class="modal fade" id="Reservations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-overlay">
+          <div class="modal-content">
+            <div class="modal-body">
+                <app-dataTable [data]="data" [labels]="labels" [action]="action"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</ng-container>
+
+

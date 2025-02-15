@@ -5,7 +5,12 @@
     flex-direction: row;
     width: 100vw;
     height: 100vh;
-    gap: 1em;
-    justify-content: space-between;
+    gap: 0.5em;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.search{
+    margin-top: 10em;
+    width: 100%;
 }

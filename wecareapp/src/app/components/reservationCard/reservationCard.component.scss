@@ -11,21 +11,37 @@
 .nameSection mat-card-subtitle{
     color: $white;
 }
+/*
+mat-card[_ngcontent-ng-c2905886466] {
+  max-width: 25em;
+  text-align: center;
+}
+
+mat-list[_ngcontent-ng-c2905886466] {
+  overflow: scroll;
+  max-width: 25em;
+  scroll-behavior: ;
+  scroll-snap-align: center;
+}
+
+*/
 
 mat-card-header{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4em;
+    padding: 3.5em;
     padding-bottom: 0;
     color: $white;
 }
 
 mat-card{
-    margin: 4em;
+    margin: 3.5em;
     background-color: $secondary;
     color: $white;
+    max-width: 25em;
+    text-align: center;
 }
 
 mat-card-content{
@@ -43,6 +59,10 @@ mat-list{
     flex-direction: row;
     padding: 1em;
     color: $white;
+    overflow: scroll;
+    max-width: 25em;
+    scroll-snap-align: center;
+    scroll-snap-type: mandatory;
 }
 
 mat-list-item{

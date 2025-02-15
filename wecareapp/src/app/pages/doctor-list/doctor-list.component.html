@@ -1,5 +1,11 @@
 
-<app-search/>
-<div class="List">
-    <app-reservationCard *ngFor="let i of l" [inList]="true" />
+<div>
+  <div class="search">
+    <app-search/>
+  </div>
+  <div class="List">
+    <ng-container *ngFor="let doctor of doctorList">
+      <app-reservationCard  [inList]="true" [doctorData]="doctor" />
+    </ng-container>
+  </div>
 </div>

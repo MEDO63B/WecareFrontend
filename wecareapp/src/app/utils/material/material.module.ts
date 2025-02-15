@@ -10,6 +10,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
+import {MatMenuModule} from '@angular/material/menu';
 
 const MATERIAL = [
     MatButtonModule,
@@ -21,7 +22,8 @@ const MATERIAL = [
     MatCardModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
-    MatSortModule
+    MatSortModule,
+    MatMenuModule
 ];
 
 @NgModule({

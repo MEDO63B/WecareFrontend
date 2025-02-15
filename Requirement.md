@@ -6,7 +6,7 @@
 
 * [ ] Reserve Doctor appointment
 * [ ] Write Report Issue
-* [ ] fillter Doctor list By
+* [ ] filter Doctor list By
 
   * [ ] Specialty
   * [ ] Area ( City )
@@ -23,7 +23,7 @@
 
 
 
-## Doctor Reuirement 
+## Doctor Requirement  
 
 * [ ] Create & View & Update  Profile
 
@@ -31,7 +31,7 @@
   * Email
   * Phone
   * BirthDate
-  * Speciality
+  * Specialty
 * [ ] Add & update & list Clinics
 
   * Name
@@ -50,5 +50,5 @@
 ## Admin Requirement
 
 * [ ] List Doctors
-* [ ] List Issuses
+* [ ] List Issues
 * [ ] View Users and Doctors in Charts

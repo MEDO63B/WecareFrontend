@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterContentInit, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { IReservationCard } from 'src/app/interfaces/doctor/reservation.user';
 
 @Component({
@@ -6,23 +6,42 @@ import { IReservationCard } from 'src/app/interfaces/doctor/reservation.user';
   templateUrl: './reservationCard.component.html',
   styleUrls: ['./reservationCard.component.scss']
 })
-export class ReservationCardComponent implements OnInit 
+export class ReservationCardComponent implements OnInit, AfterContentInit
 {
     @Input({required: true}) inList: boolean = false;
-
+    @Input() doctorData: IReservationCard | undefined;
     reservation: IReservationCard;
-    
-  constructor() { 
-    this.reservation = {
+
+  constructor() {
+    if (this.doctorData) {
+      this.reservation = this.doctorData;
+    } else {
+      this.reservation = {
         id: '1',
-      area: 'cairo',
-      phone: '1015166600',
-      doctor: {
+        area: 'cairo',
+        phone: '1015166600',
+        doctor: {
           name: 'Dr. John Doe',
-          speciality: 'Cardiologist'
-        }
+          speciality: 'Cardiologist',
+        },
+      };
     }
-}
+  }
+  ngAfterContentInit(): void {
+    if (this.doctorData) {
+      this.reservation = this.doctorData;
+    } else {
+      this.reservation = {
+        id: '1',
+        area: 'cairo',
+        phone: '1015166600',
+        doctor: {
+          name: 'Dr. John Doe',
+          speciality: 'Cardiologist',
+        },
+      };
+    }
+  }
 
   ngOnInit() {
   }

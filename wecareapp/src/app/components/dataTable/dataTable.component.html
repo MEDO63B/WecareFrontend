@@ -5,7 +5,7 @@
 
     <ng-template #dTable>
         <mat-table [dataSource]="datasource" matSort>
-        
+
             <!-- Dynamic column definitions -->
             <ng-container *ngFor="let label of labels" [matColumnDef]="label">
                 <mat-header-cell *matHeaderCellDef mat-sort-header="{{label}}"> {{ label }} </mat-header-cell>
@@ -16,46 +16,46 @@
                                 <ng-container *ngIf="!action.actionType.includes('/'); else viewBlock">
 
                                     <button  mat-raised-button [ngStyle]="{
-                                        'background-color': 
-                                            action.actionType == 'Edit' ? 'yellow' 
-                                        :   action.actionType == 'Delete' ? 'red' 
+                                        'background-color':
+                                            action.actionType == 'Edit' ? 'yellow'
+                                        :   action.actionType == 'Delete' || action.actionType == 'Cancel' ? 'red'
                                         :   action.actionType == 'Checkin' ? 'green' : ''
                                         ,
-                                        'color': 
+                                        'color':
                                             action.actionType == 'Edit' ? 'black' : 'white'
                                             }" (click)="action.actionCallBack[0](row['id'])">{{ action.actionType }}</button>
                                 </ng-container>
                                 <ng-template #viewBlock>
                                     <button mat-raised-button [ngStyle]="{
-                                        'background-color': 
-                                            action.actionType.split('/')[0] == 'View' ? 'green' 
-                                        :   action.actionType.split('/')[0] == 'Edit' ? 'yellow' 
-                                        :   action.actionType.split('/')[0] == 'Delete' ? 'red' 
+                                        'background-color':
+                                            action.actionType.split('/')[0] == 'View' ? 'green'
+                                        :   action.actionType.split('/')[0] == 'Edit' ? 'yellow'
+                                        :   action.actionType.split('/')[0] == 'Delete' ? 'red'
                                         :   action.actionType.split('/')[0] == 'Checkin' ? 'green' : ''
                                         ,
-                                        'color': 
+                                        'color':
                                             action.actionType.split('/')[0] == 'View' ? 'white' : 'black'
                                             }" (click)="action.actionCallBack[0](row['id'])">{{ action.actionType.split('/')[0] }}</button>
                                     <button mat-raised-button [ngStyle]="{
-                                        'background-color': 
-                                            action.actionType.split('/')[1] == 'View' ? 'green' 
-                                        :   action.actionType.split('/')[1] == 'Edit' ? 'yellow' 
-                                        :   action.actionType.split('/')[1] == 'Delete' ? 'red' 
+                                        'background-color':
+                                            action.actionType.split('/')[1] == 'View' ? 'green'
+                                        :   action.actionType.split('/')[1] == 'Edit' ? 'yellow'
+                                        :   action.actionType.split('/')[1] == 'Delete' ? 'red'
                                         :   action.actionType.split('/')[1] == 'Checkin' ? 'green' : ''
                                         ,
-                                        'color': 
+                                        'color':
                                             action.actionType.split('/')[1] == 'View' ? 'white' : 'black'
                                             }" (click)="action.actionCallBack[1](row['id'])">{{ action.actionType.split('/')[1] }}</button>
                                 </ng-template>
                                 </ng-container>
                             </ng-container>
-                            
+
 
                         <ng-container *ngSwitchDefault>{{row[label]}}</ng-container>
                     </ng-container>
                 </mat-cell>
             </ng-container>
-        
+
             <mat-header-row *matHeaderRowDef="labels; sticky: true"></mat-header-row>
             <mat-row *matRowDef="let row; columns: labels;"></mat-row>
         </mat-table>
