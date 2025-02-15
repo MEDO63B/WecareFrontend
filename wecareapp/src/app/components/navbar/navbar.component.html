@@ -27,7 +27,7 @@
                      <button mat-menu-item *ngIf="!isDoctor">
                        <mat-icon class="profile" data-bs-toggle="modal" data-bs-target="#Profile">account_circle</mat-icon>
                       </button>
-                     <button mat-menu-item data-bs-toggle="modal" data-bs-target="#Reservations" *ngIf="!isDoctor">
+                     <button mat-menu-item data-bs-toggle="modal" data-bs-target="#Reservations" *ngIf="!isDoctor && !isAdmin">
                           Reservations
                       </button>
                       <!-- <span ><button mat-menu-item mat-button class="signin" (click)="handlelogout()">Logout</button></span> -->
@@ -92,7 +92,7 @@
     </div>
   </div>
 
-<ng-container *ngIf="!isDoctor">
+<ng-container *ngIf="!isDoctor && !isAdmin">
   <!-- Modal -->
   <div class="modal fade" id="Reservations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">

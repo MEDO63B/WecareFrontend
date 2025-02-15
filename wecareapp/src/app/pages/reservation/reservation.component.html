@@ -1,6 +1,11 @@
 <div class="reservationComponent">
   <app-reservationCard [inList]="false" [doctorData]="doctor"/>
   <div class="schudle">
-    <app-dataTable [labels]="labels" [data]="data" [action]="action"/>
+  <ng-container  *ngIf="data?.length == 0 || !data; else schudleBlock">
+    <h1 class="alert alert-danger" role="alert" >No Reservations</h1>
+  </ng-container>
+  <ng-template #schudleBlock>
+      <app-dataTable [labels]="labels" [data]="data" [action]="action"/>
+    </ng-template>
   </div>
 </div>

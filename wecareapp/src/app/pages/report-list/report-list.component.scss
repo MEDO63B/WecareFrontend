@@ -3,6 +3,7 @@
 .list{
     @include flex-center(column);
     gap: 1em;
+    margin: 3em;
 }
 
 .title

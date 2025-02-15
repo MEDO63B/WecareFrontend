@@ -48,11 +48,12 @@ export class ReservationComponent implements OnInit {
       this.data = this.clinicReservation.mockData.filter(
         (doc: IDoctorReservation) => {
           let details =
-            doc.doctor?.id == params.get('id') ? doc.details : undefined;
-          // console.log(details);
-          return doc != undefined;
+            doc.doctor?.id == params.get('id') ? doc : undefined;
+          console.log(doc);
+          return details != undefined;
         }
       )[0].details;
+      console.log(this.data);
     });
   }
 }

@@ -3,6 +3,8 @@
 .reservationComponent
 {
   @include flex-center(row);
+  flex-wrap: wrap;
+  margin: 3em;
 }
 
 .schudle

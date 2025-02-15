@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
     logged: boolean = false;
     isDoctor: boolean = false;
+    isAdmin: boolean = false;
     data: IReservationDataRecord[] | undefined;
     labels: string[] = ['area', 'clinicName', 'time', 'date', 'action'];
     action: IDataTableAction = {
@@ -21,6 +22,7 @@ export class NavbarComponent implements OnInit {
      }
   constructor(private userService: UserService,private reservationService: ReservationUserService) {
     this.userService.isDoctor.subscribe(value => this.isDoctor = value);
+    this.userService.isAdmin.subscribe(value => this.isAdmin = value);
     this.userService.isLogin.subscribe(value => this.logged = value);
     this.data = this.reservationService.mockData;
    }

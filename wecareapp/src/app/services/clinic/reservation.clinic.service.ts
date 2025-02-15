@@ -46,7 +46,7 @@ export class ReservationClinicService {
           id: '5',
           date: '2022-01-01',
           time: '14:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Reserved
         },
         {
           id: '6',
@@ -130,7 +130,7 @@ export class ReservationClinicService {
           id: '16',
           date: '2022-01-02',
           time: '12:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Reserved
         }
       ],
       doctor: {
@@ -157,7 +157,7 @@ export class ReservationClinicService {
           id: '19',
           date: '2022-01-02',
           time: '15:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Reserved
         },
         {
           id: '20',
@@ -196,7 +196,7 @@ export class ReservationClinicService {
           id: '24',
           date: '2022-01-02',
           time: '20:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Reserved
         }
       ],
       doctor: {
@@ -223,13 +223,13 @@ export class ReservationClinicService {
           id: '27',
           date: '2022-01-03',
           time: '11:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Cancel
         },
         {
           id: '28',
           date: '2022-01-03',
           time: '12:00',
-          status: ReservationStatusType.Cancel
+          status: ReservationStatusType.Reserved
         }
       ],
       doctor: {
@@ -250,19 +250,19 @@ export class ReservationClinicService {
           id: '30',
           date: '2022-01-03',
           time: '14:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Reserve
         },
         {
           id: '31',
           date: '2022-01-03',
           time: '15:00',
-          status: ReservationStatusType.Reserve
+          status: ReservationStatusType.Cancel
         },
         {
           id: '32',
           date: '2022-01-03',
           time: '16:00',
-          status: ReservationStatusType.Cancel
+          status: ReservationStatusType.Reserved
         }
       ],
       doctor: {
@@ -289,13 +289,13 @@ export class ReservationClinicService {
           id: '35',
           date: '2022-01-03',
           time: '19:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Cancel
         },
         {
           id: '36',
           date: '2022-01-03',
           time: '20:00',
-          status: ReservationStatusType.Cancel
+          status: ReservationStatusType.Reserved
         }
       ],
       doctor: {
@@ -322,13 +322,13 @@ export class ReservationClinicService {
           id: '39',
           date: '2022-01-04',
           time: '11:00',
-          status: ReservationStatusType.Checkin
+          status: ReservationStatusType.Cancel
         },
         {
           id: '40',
           date: '2022-01-04',
           time: '12:00',
-          status: ReservationStatusType.Cancel
+          status: ReservationStatusType.Reserved
         }
       ],
       doctor: {

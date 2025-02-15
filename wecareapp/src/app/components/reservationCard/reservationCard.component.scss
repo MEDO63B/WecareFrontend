@@ -11,20 +11,7 @@
 .nameSection mat-card-subtitle{
     color: $white;
 }
-/*
-mat-card[_ngcontent-ng-c2905886466] {
-  max-width: 25em;
-  text-align: center;
-}
 
-mat-list[_ngcontent-ng-c2905886466] {
-  overflow: scroll;
-  max-width: 25em;
-  scroll-behavior: ;
-  scroll-snap-align: center;
-}
-
-*/
 
 mat-card-header{
     display: flex;
@@ -47,8 +34,10 @@ mat-card{
 mat-card-content{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 1em;
+    // flex-wrap: wrap;
+    // padding: 1em;
+    margin: 1em;
+    min-width: 25em;
     flex-direction: column;
     align-items: center;
     color: $white;
@@ -57,22 +46,24 @@ mat-card-content{
 mat-list{
     display: flex;
     flex-direction: row;
-    padding: 1em;
+    min-width: 25em;
+    // padding: 1em;
     color: $white;
-    overflow: scroll;
-    max-width: 25em;
-    scroll-snap-align: center;
-    scroll-snap-type: mandatory;
+    // overflow: scroll;
+    // max-width: 25em;
+    // scroll-snap-align: center;
+    // scroll-snap-type: mandatory;
 }
 
 mat-list-item{
     color: $white;
-    padding: 3.5em 3em;
-    overflow: visible;
+    // padding: 3.5em 3em;
+    // overflow: visible;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    min-height: 6em;
 }
 
 img{

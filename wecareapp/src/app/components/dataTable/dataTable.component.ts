@@ -15,7 +15,7 @@ export class DataTableComponent implements OnInit, OnChanges {
     @Input() action: IDataTableAction | undefined = { actionType: '', actionCallBack: [(id: string) => { console.log(`Action: ${id}`); }] };
     datasource: any;
     isLoading: boolean = true;
-    
+
     constructor() {
         this.isLoading = true;
     }
@@ -29,6 +29,7 @@ export class DataTableComponent implements OnInit, OnChanges {
     ngOnInit() {
     }
     ngAfterViewInit() {
+      this.isLoading = true;
         this.datasource = new MatTableDataSource(this.data);
         this.datasource.sort = this.sort;
         this.isLoading = false;
