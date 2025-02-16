@@ -64,3 +64,7 @@ mat-form-field{
     @include flex-center(row);
     gap: 1em;
 }
+
+.edit{
+    background-color: $tool;
+}

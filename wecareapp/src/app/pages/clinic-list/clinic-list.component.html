@@ -1,5 +1,5 @@
 <div class="list">
-    <div class="row"> 
+    <div class="row">
         <h1 class="title">Clinic List</h1>
         <app-search/>
         <app-dataTable [data]="data" [labels]="labels" [action]="action"/>
@@ -16,22 +16,21 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-body">
-            <app-clinicForm [editable]="false" [newElement]="true"/>
+            <app-clinicForm [editable]="false" [newElement]="true" [reservationPage]="false"/>
         </div>
-        
+
         </div>
     </div>
     </div>
-    
+
 <!-- Modal -->
 <div class="modal fade" id="ClinicEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-body">
-            <app-clinicForm [editable]="true" [newElement]="false" />
+            <app-clinicForm [editable]="true" [newElement]="false" [reservationPage]="false"/>
         </div>
-        
+
         </div>
     </div>
     </div>
-    

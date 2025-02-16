@@ -1,6 +1,6 @@
-<form [formGroup]="clinic" (ngSubmit)="handleClinic()">
-    <div class="logo"> 
-        <span><img src="../../../../assets/icon/clinic.svg" width="180" height="120"></span>
+<form [formGroup]="clinic" (ngSubmit)="handleClinic()" [ngStyle]="{'background-image': reservationPage || editable? 'url(../../../../assets/icon/bg.jpg)': ''}">
+    <div class="logo">
+        <span><img src="../../../../assets/icon/clinic.svg" width="180" height="120" alt="Logo"></span>
         <h1>Clinic Form</h1>
     </div>
     <div class="inputGroup">
@@ -26,20 +26,25 @@
             </mat-error>
         </mat-form-field>
     </div>
-    <button *ngIf="!editable" mat-button  [disabled]="!clinic.valid" [disableRipple]="loading" [ngClass]="{'submit': !loading, 'submit-loading': loading}">
+    <button type="submit" *ngIf="!editable && newElement" mat-button  [disabled]="!clinic.valid" [disableRipple]="loading" [ngClass]="{'submit': !loading, 'submit-loading': loading}">
         <ng-container *ngIf="!loading">
             <span>Submit</span>
         </ng-container>
-        
+
         <ng-container *ngIf="loading">
             <span class="loading"><mat-spinner></mat-spinner></span>
         </ng-container>
     </button>
 
-    <ng-container *ngIf="!loading && editable">
+    <ng-container *ngIf="!loading && editable && !reservationPage">
         <div class="EditTools">
-            <button mat-button class="cancel" (click)="handleCancel()">Cancel</button>
-            <button mat-button class="save" (click)="handleSave()">Save</button>
+            <button type="button" mat-button class="cancel" (click)="handleCancel()">Reset</button>
+            <button type="button" mat-button class="save" (click)="handleSave()">Save</button>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!loading && reservationPage">
+        <div class="EditTools">
+            <button type="button" mat-button class="edit" (click)="handleEdit()">Edit</button>
         </div>
     </ng-container>
 

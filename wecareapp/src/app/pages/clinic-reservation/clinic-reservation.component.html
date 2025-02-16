@@ -1,3 +1,28 @@
-<p>
-  clinic-reservation works!
-</p>
+<div class="clinic-reservationComponent">
+  <div class="clinicSchedule">
+    <div class="clinicCard">
+      <app-clinicForm [editable]="false" [newElement]="false" [reservationPage]="true"/>
+
+    </div>
+    <div class="schudleTable">
+      <app-dataTable [data]="data?.schudle" [labels]="schedulelabels" [action]="scheduleaction"/>
+      <button mat-button class="addTime"  data-bs-toggle="modal" data-bs-target="#TimeAdd">Add</button>
+    </div>
+  </div>
+  <div class="reservationTable">
+    <app-dataTable [data]="data?.reserver" [labels]="reserverLabels" [action]="reserverAction"/>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="TimeAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-body">
+            <app-schedule/>
+        </div>
+
+        </div>
+    </div>
+    </div>

@@ -31,6 +31,7 @@ import { ClinicFormComponent } from './components/forms/clinicForm/clinicForm.co
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchService } from './services/search/search-service.service';
 import { DataTableComponent } from './components/dataTable/dataTable.component';
+import { ScheduleComponent } from './components/forms/schedule/schedule.component';
 
 @NgModule({
   declarations: [	
@@ -53,7 +54,8 @@ import { DataTableComponent } from './components/dataTable/dataTable.component';
     ClinicFormComponent,
     DashboardComponent,
     SearchComponent,
-    DataTableComponent
+    DataTableComponent,
+    ScheduleComponent
    ],
   imports: [
     BrowserModule,

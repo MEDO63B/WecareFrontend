@@ -1,0 +1,33 @@
+@import '../../../../styles.scss';
+
+.title{
+  font-size: $h1;
+  text-align: center;
+  color: $ligth-white;
+}
+form{
+  @include flex-center(column);
+  gap: 1em;
+}
+
+mat-form-field{
+  width: 100%;
+  padding: 0 1em;
+}
+
+.submit{
+  margin: 0 1em;
+  background-color: $green;
+}
+
+.reset{
+  margin: 0 1em;
+  background-color: $error;
+  color: $ligth-white;
+}
+
+.actionButtons{
+  @include flex-center(row);
+  gap: 1em;
+}
+

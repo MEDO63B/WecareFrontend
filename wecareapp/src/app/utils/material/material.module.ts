@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule }  from '@angular/material/core';
 
 const MATERIAL = [
     MatButtonModule,
@@ -23,7 +25,9 @@ const MATERIAL = [
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatSortModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 ];
 
 @NgModule({

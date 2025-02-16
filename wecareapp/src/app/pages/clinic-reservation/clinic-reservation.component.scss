@@ -1,0 +1,33 @@
+@import '../../../styles.scss';
+
+.clinic-reservationComponent
+{
+  @include flex-center(column);
+
+  margin: 3em;
+}
+
+.schudleTable
+{
+  max-width: 30em;
+  margin: 5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.addTime
+{
+  @include flex-center(row);
+  margin: 2em;
+  background-color: $green;
+}
+
+.clinicSchedule
+{
+  @include flex-center(row);
+  margin: 2em;
+}
+
+.modal-content{
+  background-image: url('../../../assets/icon/bg.jpg');
+}
