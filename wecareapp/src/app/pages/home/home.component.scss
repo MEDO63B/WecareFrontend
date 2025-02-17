@@ -1,0 +1,94 @@
+@import '../../../styles.scss';
+
+.home{
+  margin: 2em 0;
+  @include flex-center(column);
+  width: 100vw;
+}
+
+.titleSection{
+  width: 100vw;
+  height: 10vh;
+}
+
+.title{
+  font-size: $h1;
+  text-align: center;
+  width: 100%;
+}
+
+.subtitle{
+  font-size: $h3;
+  text-align: center;
+  width: 100%;
+}
+
+.imageSection{ 
+  width: 100vw;
+  color: $ligth-white;
+}
+
+.imageSection img{
+  width: 100vw;
+  height: 50vh;
+}
+
+.services{
+  width: 100vw;
+  margin: 1em;
+  @include flex-center(column);
+  flex-wrap: wrap;
+  gap: 1em;
+  // background-color: aqua;
+}
+
+.serviceSection{
+  // background-color: brown;
+  width: 100vw;
+  margin: 1em 0;
+  @include flex-center(row);
+  // gap: 10%;
+}
+
+.serviceSection div
+{
+  @include flex-center(column);
+  width: 100%;
+  gap: 1em;
+  // background-color: gold;
+}
+
+
+.contact{
+  width: 100vw;
+  margin: 1em;
+  @include flex-center(column);
+}
+
+.contactSection{
+  width: 100vw;
+  margin: 1em;
+  @include flex-center(row);
+  justify-content: center;
+  gap: 10em;
+  font-size: $h5;
+}
+
+.serviceSection h3
+{
+  font-size: $h4;
+  font-weight: bold;
+  text-align: center;
+  // max-width: 30em;
+  // margin: 0 17em;
+  margin-bottom: 1em;
+}
+p{
+  text-align: center;
+  display: inline-flex;
+  font-size: $h5;
+  flex-wrap: wrap;
+  max-width: 30em;
+  // margin: 0 15em;
+}
+
