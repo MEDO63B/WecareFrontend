@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-schedule',
@@ -7,5 +8,23 @@ import { Component } from '@angular/core';
 })
 export class ScheduleComponent {
 
-  // TODO: add schedule
+  scheduleForm: FormGroup;
+  constructor() {
+    this.scheduleForm = new FormGroup({
+      time: new FormControl('', Validators.required),
+      date: new FormControl('', Validators.required),
+    });
+   }
+
+   handleSubmit() {
+    if (this.scheduleForm.valid) {
+      console.log(this.scheduleForm.value);
+    }
+  }
+
+  handleReset()
+  {
+    this.scheduleForm.reset();
+  }
+
 }

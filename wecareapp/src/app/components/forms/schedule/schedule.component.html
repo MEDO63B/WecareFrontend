@@ -1,17 +1,15 @@
-<form>
+<form [formGroup]="scheduleForm">
   <h1 class="title">Schedule</h1>
   <mat-form-field>
     <mat-label>Date</mat-label>
-    <input matInput [matDatepicker]="picker" placeholder="Ex. 2022-01-01">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker [panelClass]="'dpicker'"></mat-datepicker>
+    <input  matInput  placeholder="Ex. 2022-01-01" formControlName="date" type="date">
   </mat-form-field>
   <mat-form-field>
     <mat-label>Time</mat-label>
-    <input matInput placeholder="Ex. 08:00">
+    <input matInput placeholder="Ex. 08:00" formControlName="time" type="time">
   </mat-form-field>
   <div class="actionButton">
-    <button class="submit" type="submit" mat-button>Add</button>
-    <button class="reset" type="submit" mat-button>Reset</button>
+    <button class="submit" type="submit" mat-button (click)="handleSubmit()" [disabled]="!scheduleForm.valid">Add</button>
+    <button class="reset" type="reset" mat-button (click)="handleReset()">Reset</button>
   </div>
 </form>
