@@ -35,7 +35,7 @@
               "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-                "./node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {
@@ -101,6 +101,14 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/wecareapp",
+            "netlifyToken": "nfp_UdMNpAXcp3G9TjwX2ybaYLrGteL9TSjv1712",
+            "siteId": ""
           }
         }
       }

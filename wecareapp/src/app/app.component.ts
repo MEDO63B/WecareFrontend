@@ -7,17 +7,17 @@ import { SearchService } from './services/search/search-service.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent  {
   title = 'wecareapp';
   constructor(private searchService: SearchService)
   {
-      this.searchService.searchTerm.subscribe(val => {
-          console.log("val: ",val);
-      });
+      // this.searchService.searchTerm.subscribe(val => {
+      //     // console.log("val: ",val);
+      // });
   }
-    ngOnDestroy(): void {
-        this.searchService.searchTerm.unsubscribe();
-    }
+    // ngOnDestroy(): void {
+    //     this.searchService.searchTerm.unsubscribe();
+    // }
 //   data = {
 //     labels: [
 //       'Users',

@@ -18,14 +18,14 @@ export class ReservationComponent implements OnInit {
     actionType: 'Reserve&Cancel',
     actionCallBack: [
       (id: string) => {
-        console.log(`Reserve: ${id}`);
+        // console.log(`Reserve: ${id}`);
         //ToDo: Add user data to the reservation form
         new ElementRef<HTMLElement>(
           document.getElementById('reservebtnform') as HTMLElement
         ).nativeElement.click();
       },
       (id: string) => {
-        console.log(`Cancel: ${id}`);
+        // console.log(`Cancel: ${id}`);
       },
     ],
   };
@@ -41,7 +41,7 @@ export class ReservationComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe((params) => {
-      console.log(params.get('id'));
+      // console.log(params.get('id'));
 
       this.doctor = this.doctorReservation.mockData.filter(
         (doc: IReservationCard) => {
@@ -53,11 +53,11 @@ export class ReservationComponent implements OnInit {
         (doc: IDoctorReservation) => {
           let details =
             doc.doctor?.id == params.get('id') ? doc : undefined;
-          console.log(doc);
+          // console.log(doc);
           return details != undefined;
         }
       )[0].details;
-      console.log(this.data);
+      // console.log(this.data);
     });
   }
 }

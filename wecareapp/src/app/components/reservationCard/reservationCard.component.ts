@@ -48,7 +48,7 @@ export class ReservationCardComponent implements OnInit, AfterContentInit
   }
 
   handleView(id: string) {
-      console.log(id);
+      // console.log(id);
       this.router.navigate([`/reservation/`, id]);
 
   }

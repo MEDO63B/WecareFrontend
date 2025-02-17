@@ -52,3 +52,6 @@
 * [ ] List Doctors
 * [ ] List Issues
 * [ ] View Users and Doctors in Charts
+
+
+netlifiy: nfp_UdMNpAXcp3G9TjwX2ybaYLrGteL9TSjv1712
