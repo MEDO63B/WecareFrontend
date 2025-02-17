@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IDoctorReservation, ReservationDetails } from 'src/app/interfaces/clinic/reservation.clinic';
 import { IReservationCard } from 'src/app/interfaces/doctor/reservation.user';
@@ -19,6 +19,10 @@ export class ReservationComponent implements OnInit {
     actionCallBack: [
       (id: string) => {
         console.log(`Reserve: ${id}`);
+        //ToDo: Add user data to the reservation form
+        new ElementRef<HTMLElement>(
+          document.getElementById('reservebtnform') as HTMLElement
+        ).nativeElement.click();
       },
       (id: string) => {
         console.log(`Cancel: ${id}`);

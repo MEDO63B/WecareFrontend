@@ -1,0 +1,19 @@
+<form [formGroup]="reservationForm" (ngSubmit)="handleSubmit()">
+    <h1 class="title">Reservation</h1>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex. John " formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input type="tel" matInput placeholder="Ex. +91 1234567890" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Ex. I have a Problem in my stomach "  formControlName="description"></textarea>
+    </mat-form-field>
+
+    <button mat-button type="submit" class="submit" [disabled]="!reservationForm.valid">Submit</button>
+
+
+</form>

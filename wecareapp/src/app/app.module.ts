@@ -32,6 +32,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SearchService } from './services/search/search-service.service';
 import { DataTableComponent } from './components/dataTable/dataTable.component';
 import { ScheduleComponent } from './components/forms/schedule/schedule.component';
+import { ReservationFormComponent } from './components/forms/reservation-form/reservation-form.component';
 
 @NgModule({
   declarations: [	
@@ -55,7 +56,8 @@ import { ScheduleComponent } from './components/forms/schedule/schedule.componen
     DashboardComponent,
     SearchComponent,
     DataTableComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    ReservationFormComponent
    ],
   imports: [
     BrowserModule,
