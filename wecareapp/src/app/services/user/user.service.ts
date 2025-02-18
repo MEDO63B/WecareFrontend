@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class UserService {
 
     isLogin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-    isAdmin:  BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+    isAdmin:  BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     isDoctor:  BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
     isUser:  BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
