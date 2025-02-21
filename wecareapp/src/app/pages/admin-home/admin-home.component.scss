@@ -2,8 +2,8 @@
 
 .content-wrapper{
     width: 100vw;
-    height: 100vh;
-    overflow: scroll;
+    // height: 100vh;
+    // overflow: scroll;
     @include flex-center(column);
     justify-content: flex-start;
     gap: 2em;
